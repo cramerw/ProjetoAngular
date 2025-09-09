@@ -39,8 +39,9 @@ O projeto utiliza **TailwindCSS** para estilização.
 
 1. Abra o projeto no **VSCode**
 2. Instale a extensão **Live Server**
-3. Abra a pasta `proxy` no terminal e rode:
+3. Abra a pasta `proxy` no terminal com os comandos e rode:
    ```bash
+   cd ProjetoAngular-main
    cd proxy
    npm install
    node server.js
@@ -52,12 +53,6 @@ O projeto utiliza **TailwindCSS** para estilização.
    - Usuário: `admin`
    - Senha: `1234`
 7. Após login, a página Home será exibida com os dados da API
-
----
-
-## 📦 Git e .gitignore
-
-O projeto já inclui um arquivo `.gitignore` para evitar o versionamento de dependências e arquivos desnecessários.
 
 ---
 
@@ -73,7 +68,7 @@ O projeto já inclui um arquivo `.gitignore` para evitar o versionamento de depe
 ## 🔧 Observações
 
 - A requisição da API pode apresentar **CORS ou limites de requisição** (`Too Many Requests`) dependendo do servidor  
-- Para desenvolvimento local, pode ser necessário usar **proxy** ou ferramentas como [CORS Anywhere](https://cors-anywhere.herokuapp.com/)  
+- Para desenvolvimento local, pode ser necessário usar **proxy** ou ferramentas como [CORS Anywhere](https://cors-anywhere.herokuapp.com/) - ativar CORS temporário para rodar projeto
 - Colunas da tabela são ordenáveis clicando nos cabeçalhos  
 
 ---
