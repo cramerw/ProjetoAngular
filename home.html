@@ -1,0 +1,44 @@
+<body ng-app="meuApp" ng-controller="DashboardController">
+  <div class="flex items-center justify-center min-h-screen bg-blue-500">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-6xl">
+  <h1 class="text-xl font-bold">Seja Bem-Vindo!</h1>
+  <h2 class="text-md">Dados da API:</h2>
+
+  <div ng-if="loading">Carregando...</div>
+  <div ng-if="error" class="text-red-500">{{error}}</div>
+
+  <div style="overflow-x:auto;">
+    <table class="min-w-full border mt-2 items-center text-center" ng-if="!loading && !error">
+      <thead class="bg-gray-200">
+        <tr>
+          <th ng-click="sortBy('id')" class="cursor-pointer text-center">ID</th>
+          <th ng-click="sortBy('rastreavel')" class="cursor-pointer text-center">Rastreável</th>
+          <th ng-click="sortBy('tipo')" class="cursor-pointer text-center">Tipo</th>
+          <th ng-click="sortBy('latitude')" class="cursor-pointer text-center">Latitude</th>
+          <th ng-click="sortBy('longitude')" class="cursor-pointer text-center">Longitude</th>
+          <th ng-click="sortBy('velocidade')" class="cursor-pointer text-center">Velocidade</th>
+          <th ng-click="sortBy('ignicao')" class="cursor-pointer text-center">Ignição</th>
+          <th ng-click="sortBy('odometro')" class="cursor-pointer text-center">Odômetro</th>
+          <th ng-click="sortBy('horimetro')" class="cursor-pointer text-center">Horímetro</th>
+          <th ng-click="sortBy('dataHora')" class="cursor-pointer text-center">Data/Hora</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="item in apiData | orderBy:sortColumn:reverseSort">
+          <td>{{item.id || '-'}}</td>
+          <td>{{item.rastreavel === undefined ? '-' : (item.rastreavel ? 'Sim' : 'Não')}}</td>
+          <td>{{item.tipo || '-'}}</td>
+          <td>{{item.latitude || '-'}}</td>
+          <td>{{item.longitude || '-'}}</td>
+          <td>{{item.velocidade || '-'}}</td>
+          <td>{{item.ignicao === undefined ? '-' : formatIgnicao(item.ignicao)}}</td>
+          <td>{{item.odometro || '-'}}</td>
+          <td>{{item.horimetro || '-'}}</td>
+          <td>{{item.dataHora ? formatDate(item.dataHora) : '-'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+  </div>
+</body>

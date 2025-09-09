@@ -1,0 +1,21 @@
+<div class="flex items-center justify-center min-h-screen bg-blue-500">
+  <div class="bg-white p-8 rounded-lg shadow-md w-96">
+    <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
+
+    <form ng-submit="login()" class="flex flex-col gap-4">
+      <input type="text" placeholder="Usuário"
+             ng-model="data.username"
+             class="border rounded px-3 py-2 w-full" required>
+
+      <input type="password" placeholder="Senha"
+             ng-model="data.password"
+             class="border rounded px-3 py-2 w-full" required>
+
+      <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white py-2 rounded">
+        Entrar
+      </button>
+
+      <p class="text-red-500 mt-2">{{ error }}</p>
+    </form>
+  </div>
+</div>
