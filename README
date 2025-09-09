@@ -1,4 +1,4 @@
-# AngularJS Login + Home com Dados de API
+# AngularJS Login + Home com Dados da API
 
 Projeto em **AngularJS** de login e home que exibe dados da API real em uma tabela.  
 O projeto utiliza **TailwindCSS** para estilização.
